@@ -1,37 +1,21 @@
 # MiniRT, un projet 42 de raytracer 
-MiniRT est un mini moteur de raytracing écrit en C.
-Le programme génère une image 3D à partir d’une description de scène (.rt) en utilisant les principes fondamentaux du ray tracing : rayons, intersections, éclairage et ombres.
-Ce miniRT apporte des fonctionnalites non demandees dans le sujet 42 mais qui rendent le programme plus agreable a manipuler, implementent des effets de lumiere supplementaires (cf. bonus perso).
-Ces ameliorations, a notre initiative (projet realise en binome), a permis d'explorer et d'approfondir des concepts mathematiques/physiques (quaternions, phenomene de refraction) et de prorgammation (buffer d'accumulation, threads pool, interface utilisateur).
+- MiniRT est un mini moteur de raytracing écrit en C. Le programme génère une image 3D à partir d’une description de scène (.rt) en utilisant les principes fondamentaux du ray tracing : rayons, intersections, éclairage et ombres.
+- Ce miniRT apporte des fonctionnalites non demandees dans le sujet 42 mais qui rendent le programme plus agreable a manipuler, implementent des effets de lumiere supplementaires (cf. bonus perso).
+- Ameliorations a notre initiative (projet realise en binome) qui ont permis d'explorer et d'approfondir des concepts mathematiques/physiques (quaternions, phenomene de refraction) et de prorgammation (buffer d'accumulation, threads pool, interface utilisateur).
 
 # Fonctionnalites
 
 - Objets supportés :
-Sphère
-Plan
-Cylindre
-Cône (bonus 42)
+Sphère, Plan, Cylindre, Cône (bonus 42)
 
 - Effets de lumiere :
-Ombres portées
-Reflets
-Anti auto-intersection via un offset (EPS)
-Eclairage de Phong, lumiere diffuse / speculaire (bonus 42)
-Plusieurs lumières ponctuelles (bonus 42)
-Transparence / verre (bonus perso)
-Degrade de couleurs (bonus perso)
+Ombres portées, Reflets, Anti auto-intersection via un offset (EPS), Eclairage de Phong, lumiere diffuse / speculaire (bonus 42), Plusieurs lumières ponctuelles (bonus 42), Transparence / verre (bonus perso), Degrade de couleurs (bonus perso)
 
 - Effets des materiaux
-Rugosite
-Gestion des normales pour bump maps (bonus 42)
-Textures (bonus 42)
-Effet checkerboard (bonus 42)
+Reflexion, Rugosite, Gestion des normales pour bump maps (bonus 42), Textures (bonus 42), Effet checkerboard (bonus 42)
 
 - Gestion de l'affichage
-Affichage en temps réel via MiniLibX
-Accumulation des pixels pour amelioration de la qualite image en continu (bonus perso)
-Interface utilisateur permettant de modifier camera et objets en temps reel (bonus perso)
-Gestion de la rotation des objets avec quaternions (bonus perso)
+Affichage en temps réel via MiniLibX, Accumulation des pixels pour amelioration de la qualite image en continu (bonus perso), Interface utilisateur permettant de modifier camera et objets en temps reel (bonus perso), Gestion de la rotation des objets avec quaternions (bonus perso)
 
 # COMPILATION
 
@@ -76,7 +60,6 @@ Principes du ratracing:
  - https://raytracing.github.io/books/RayTracingInOneWeekend.html (english);
  - https://www.youtube.com/playlist?list=PLlrATfBNZ98edc5GshdBtREv5asFW3yXl
  - https://www.youtube.com/watch?v=gsZiJeaMO48
-
 Bases mathematiques:
 - rappels trigonometriques : https://perso.liris.cnrs.fr/gilles.gesquiere/Teaching/Imagina/Cours05.pdf, https://perso.univ-rennes1.fr/sean.mcnamara/AppMath2/2.4_cylindriques_spheriques.pdf;
 - calcul vectoriel (https://www.youtube.com/watch?v=4uuQh-J0D2c) (francais);
@@ -84,7 +67,6 @@ Bases mathematiques:
 - https://docs.gl/sl4/refract
 - https://docs.gl/sl4/reflect
 - https://fr.wikipedia.org/wiki/Ombrage_de_Phong
-
 Texture:
 - https://anirudh-s-kumar.github.io/CG-Notes/texture_mapping/
 - https://dogukannn.github.io/2024/12/12/ray-tracing-four.html
