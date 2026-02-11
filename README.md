@@ -39,6 +39,7 @@ Ce pb genere des artefacts au deplacement de la camera ou lors de la modificatio
               avant/arriere = scroll avant/arriere (axe z);
               haut/bas = w_key/s_key (axe y);
               camera gauche/droite = a_key/d_key (axe x);
+
 //en mode "EDIT":
 - selection objet = click gauche souris;
 - resize objet = scroll avant/arriere souris;
