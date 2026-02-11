@@ -22,15 +22,15 @@ Affichage en temps réel via MiniLibX, Accumulation des pixels pour amelioration
 Version "Standard 42" (avec bonus 42 + Interface utilisateur)
 - telecharger la Minilibx (https://github.com/42paris/minilibx-linux) dans le repertoire lib/mlx
 - make
-- ./miniRT <nom du fichier de scene a afficher>
+- ./miniRT "nom du fichier de scene a afficher"
 
 Version multithread
 - make bonus
-- - ./miniRT <nom du fichier de scene a afficher>
-La version multithread necessite encore quelques ameliorations notamment pour regler les pb persistants d'acces concurrents a la scene (necessite que chaque thread ait sa propre copie de la scene),
+- - ./miniRT "nom du fichier de scene a afficher"
+- La version multithread necessite encore quelques ameliorations notamment pour regler les pb persistants d'acces concurrents a la scene (necessite que chaque thread ait sa propre copie de la scene),
 mais aussi pour optimiser la coordination des threads entre les phases d'accumulation d'image et les phases de mise a jour de la scene apres modification.
 Ce pb genere des artefacts au deplacement de la camera ou lors de la modification de la scene.
-Toutefois, on note une amelioration sensible de la fluidite de manipulation de la scene en temps reel.
+- On note une amelioration sensible de la fluidite de manipulation de la scene en temps reel.
 
 # UI
 en mode "CAMERA" :
