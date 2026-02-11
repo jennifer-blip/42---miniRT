@@ -33,13 +33,13 @@ Ce pb genere des artefacts au deplacement de la camera ou lors de la modificatio
 - On note une amelioration sensible de la fluidite de manipulation de la scene en temps reel.
 
 # UI
-en mode "CAMERA" :
+//en mode "CAMERA" :
 - rotation camera = click gauche + deplacement souris;
 - translation camera :
               avant/arriere = scroll avant/arriere (axe z);
               haut/bas = w_key/s_key (axe y);
               camera gauche/droite = a_key/d_key (axe x);
-en mode "EDIT":
+//en mode "EDIT":
 - selection objet = click gauche souris;
 - resize objet = scroll avant/arriere souris;
 - translation objets:
