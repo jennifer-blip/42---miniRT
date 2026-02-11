@@ -1,22 +1,52 @@
 # MiniRT, un projet 42 de raytracer 
 MiniRT est un mini moteur de raytracing écrit en C.
 Le programme génère une image 3D à partir d’une description de scène (.rt) en utilisant les principes fondamentaux du ray tracing : rayons, intersections, éclairage et ombres.
+Ce miniRT apporte des fonctionnalites non demandees dans le sujet 42 mais qui rendent le programme plus agreable a manipuler, implementent des effets de lumiere supplementaires (cf. bonus perso).
+Ces ameliorations, a notre initiative (projet realise en binome), a permis d'explorer et d'approfondir des concepts mathematiques/physiques (quaternions, phenomene de refraction) et de prorgammation (buffer d'accumulation, threads pool, interface utilisateur).
 
 # Fonctionnalites
 
-Objets supportés :
+- Objets supportés :
 Sphère
 Plan
 Cylindre
-Cône (bonus)
-Lumière ponctuelle
+Cône (bonus 42)
+
+- Effets de lumiere :
 Ombres portées
-Gestion des normales
-Textures (bonus)
-Transparence / verre (bonus)
-Degrade de couleurs (bonus)
-Effet checkerboard (bonus)
+Reflets
+Anti auto-intersection via un offset (EPS)
+Eclairage de Phong, lumiere diffuse / speculaire (bonus 42)
+Plusieurs lumières ponctuelles (bonus 42)
+Transparence / verre (bonus perso)
+Degrade de couleurs (bonus perso)
+
+- Effets des materiaux
+Rugosite
+Gestion des normales pour bump maps (bonus 42)
+Textures (bonus 42)
+Effet checkerboard (bonus 42)
+
+- Gestion de l'affichage
 Affichage en temps réel via MiniLibX
+Accumulation des pixels pour amelioration de la qualite image en continu (bonus perso)
+Interface utilisateur permettant de modifier camera et objets en temps reel (bonus perso)
+Gestion de la rotation des objets avec quaternions (bonus perso)
+
+# COMPILATION
+
+Version "Standard 42" (avec bonus 42 + Interface utilisateur)
+- telecharger la Minilibx (https://github.com/42paris/minilibx-linux) dans le repertoire lib/mlx
+- make
+- ./miniRT <nom du fichier de scene a afficher>
+
+Version multithread
+- make bonus
+- - ./miniRT <nom du fichier de scene a afficher>
+La version multithread necessite encore quelques ameliorations notamment pour regler les pb persistants d'acces concurrents a la scene (necessite que chaque thread ait sa propre copie de la scene),
+mais aussi pour optimiser la coordination des threads entre les phases d'accumulation d'image et les phases de mise a jour de la scene apres modification.
+Ce pb genere des artefacts au deplacement de la camera ou lors de la modification de la scene.
+Toutefois, on note une amelioration sensible de la fluidite de manipulation de la scene en temps reel.
 
 # UI
 en mode "CAMERA" :
@@ -31,7 +61,7 @@ en mode "EDIT":
 - translation objets:
                 haut/bas = w_key/s_key (axe y);
                 gauche/droite = a_key/d_key (axe x);
-                avant/arriere = z_key enfoncee + scroll avant/arriere souris
+                avant/arriere = fleche haut / fleche bas
 - rotation objets: maintenir click gauche souris +
                 axe x = q_KEY / e_KEY;
                 axe y = a_KEY / d_KEY;
@@ -39,14 +69,6 @@ en mode "EDIT":
   
 bascule mode "camera" <--> "edit" = m_key;
 retour camera position initiale = r_key.
-
-# concepts cles
-Calcul des intersections rayon / objet
-Calcul des normales
-Éclairage de Phong (diffuse / spéculaire)
-Rayons d’ombre
-Anti auto-intersection via un offset (EPS)
-Quaternions pour les rotations
 
 # Sources:
 Principes du ratracing:
